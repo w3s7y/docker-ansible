@@ -5,7 +5,7 @@ FROM alpine:latest
 # also install docker libraries and install crypto module which gives good
 # performance gains on ansible-vault (particularly when using lots of vaulted
 # files).
-RUN apk update && apk add python py-pip python-dev && \
+RUN apk update && apk add python py-pip python-dev gcc && \
     apk add libc-dev libffi-dev openssl-dev && \
     pip install ansible pywinrm docker-py docker-compose cryptography
 
