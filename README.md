@@ -12,8 +12,6 @@ In order to be more performant and functional. I have included some
 additional python packages
 
 * pywinrm        - enables windows remote management (win_*) modules
-* docker-py      - enables the docker modules for ansible
-* docker-compose - docker compose style modules functionality
 * cryptography   - provides python with more performant cryptography
 
 # Pre-Requisites

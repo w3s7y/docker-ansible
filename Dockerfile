@@ -7,7 +7,7 @@ FROM alpine:latest
 # files).
 RUN apk update && apk add python py-pip python-dev gcc && \
     apk add libc-dev libffi-dev openssl-dev && \
-    pip install ansible pywinrm docker-py docker-compose cryptography
+    pip install ansible pywinrm cryptography
 
 # Inventory file (defaults to ./hosts)
 ENV INVENTORY hosts
