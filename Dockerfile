@@ -12,6 +12,9 @@ RUN apk update && apk add python py-pip python-dev gcc && \
 # Inventory file (defaults to ./hosts)
 ENV INVENTORY hosts
 
+# Test variable
+ENV TEST test
+
 # Setup working directory structure (/data)
 # Create /data as a volume
 VOLUME /data
