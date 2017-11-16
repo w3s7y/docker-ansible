@@ -6,8 +6,8 @@ FROM alpine:latest
 # performance gains on ansible-vault (particularly when using lots of vaulted
 # files).
 RUN apk update && apk add python py-pip python-dev gcc && \
-    apk add libc-dev libffi-dev openssl-dev && \
-    pip install ansible pywinrm cryptography
+    apk add libc-dev libffi-dev openssl-dev make && \
+    pip install cffi ansible pywinrm cryptography
 
 # Inventory file (defaults to ./hosts)
 ENV INVENTORY hosts
@@ -22,5 +22,5 @@ VOLUME /data
 # Use /data as our working directory.
 WORKDIR /data
 
-# Fire up ansible, using /data/plybook.yaml as the default playbook.
+# Fire up ansible, using /data/playbook.yaml as the default playbook.
 CMD ansible-playbook -i ${INVENTORY} playbook.yaml
